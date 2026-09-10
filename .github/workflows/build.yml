@@ -18,11 +18,6 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Setup Flutter
-        uses: subosito/flutter-action@v2
-        with:
-          channel: 'stable'
-
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
@@ -32,7 +27,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install flet gspread google-auth unidecode rapidfuzz deep-translator
-          flet build apk
+          yes | flet build apk
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
