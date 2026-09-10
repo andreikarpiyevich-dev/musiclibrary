@@ -1,6 +1,0 @@
-flet
-gspread
-google-auth
-unidecode
-rapidfuzz
-deep-translator
