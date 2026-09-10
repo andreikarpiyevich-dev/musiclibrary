@@ -1,3 +1,14 @@
+import sys
+from types import ModuleType
+
+# Заглушка для отсутствующего в Android стандартного модуля wsgiref
+if "wsgiref" not in sys.modules:
+    wsgiref_mock = ModuleType("wsgiref")
+    sys.modules["wsgiref"] = wsgiref_mock
+    simple_server_mock = ModuleType("wsgiref.simple_server")
+    sys.modules["wsgiref.simple_server"] = simple_server_mock
+    wsgiref_mock.simple_server = simple_server_mock
+
 import os
 from pathlib import Path
 import flet as ft
@@ -46,8 +57,6 @@ def main(page: ft.Page):
         results_column.controls.clear()
         results_column.controls.append(ft.Text(f"Поиск: {query}"))
         
-        # Сюда вы можете вставить вашу логику поиска (rapidfuzz, транслитерация и т.д.)
-        # Например, чтение строк из таблицы:
         if sheet:
             try:
                 records = sheet.get_all_records()
