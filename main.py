@@ -12,7 +12,7 @@ from kivy.uix.button import Button
 from kivy.clock import Clock
 
 # --- НАСТРОЙКИ ---
-CREDENTIALS_FILE = "credentials_2.json"
+CREDENTIALS_FILE = "credentials.json"
 GOOGLE_SHEET_URL = "https://docs.google.com/spreadsheets/d/1ipHOZB4Xjs0XLWbUDRAykXvCox4KW17l57Lmjky1hHU/edit"
 
 class MusicLibraryApp(App):
