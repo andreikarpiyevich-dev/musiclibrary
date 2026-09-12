@@ -19,7 +19,7 @@ source.include_exts = py,png,jpg,kv,atlas,json
 # (list) Библиотеки, необходимые для работы программы на Android.
 # ВНИМАНИЕ: Tkinter здесь нет, так как он не работает на Android. 
 # Указан kivy в качестве графической библиотеки.
-requirements = python3, kivy, gspread, google-auth, unidecode, rapidfuzz, deep-translator, requests
+requirements = python3, kivy, gspread, google-auth, requests, urllib3, openssl, pyopenssl, certifi
 
 # (str) Версия вашего приложения
 version = 1.0
